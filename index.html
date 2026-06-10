@@ -304,8 +304,21 @@ select.sort:focus { border-color: var(--accent-soft); }
 .cover img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  z-index: 1;
+}
+.cover.has-image::before {
+  content: "";
+  position: absolute;
+  inset: -16px;
+  background-image: var(--cover-url);
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px);
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
 }
 .cover img[data-loaded="false"] { opacity: 0; }
 
@@ -550,7 +563,19 @@ select.sort:focus { border-color: var(--accent-soft); }
   overflow: hidden;
   box-shadow: var(--shadow-2);
 }
-.modal-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.modal-cover img { width: 100%; height: 100%; object-fit: contain; display: block; position: relative; z-index: 1; }
+.modal-cover.has-image::before {
+  content: "";
+  position: absolute;
+  inset: -24px;
+  background-image: var(--cover-url);
+  background-size: cover;
+  background-position: center;
+  filter: blur(28px);
+  opacity: 0.6;
+  z-index: 0;
+  pointer-events: none;
+}
 .modal-cover .placeholder {
   position: absolute;
   inset: 0;
@@ -794,8 +819,13 @@ function handleCoverError(img) {
 }
 function handleCoverLoad(img) {
   img.style.opacity = 1;
-  const ph = img.previousElementSibling;
-  if (ph) ph.style.display = "none";
+  const cover = img.closest(".cover, .modal-cover");
+  if (cover) {
+    cover.style.setProperty("--cover-url", `url("${img.currentSrc || img.src}")`);
+    cover.classList.add("has-image");
+    const ph = cover.querySelector(".placeholder");
+    if (ph) ph.style.display = "none";
+  }
 }
 
 // ── TAG META ─────────────────────────────────────────
