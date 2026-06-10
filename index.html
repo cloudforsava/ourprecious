@@ -7,10 +7,10 @@
 <meta name="description" content="Домашняя книжная коллекция">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Karla:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #F0E6D2;
+  --bg: #8D917A;
   --bg-warm: #EADFC4;
   --paper: #FAF4E3;
   --paper-soft: #F5EDD8;
@@ -51,7 +51,7 @@
 html, body {
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Karla', sans-serif;
+  font-family: 'Inclusive Sans', sans-serif;
   font-size: 15px;
   line-height: 1.55;
   min-height: 100vh;
@@ -87,18 +87,17 @@ html, body {
 .header::after  { margin-top: 28px; }
 
 .header h1 {
-  font-family: 'Fraunces', serif;
-  font-weight: 500;
-  font-variation-settings: "opsz" 144, "SOFT" 50;
-  font-size: clamp(40px, 6vw, 64px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  font-family: 'Caveat', cursive;
+  font-weight: 600;
+  font-size: clamp(52px, 7vw, 80px);
+  line-height: 1.0;
+  letter-spacing: 0;
   color: var(--ink);
   margin-bottom: 6px;
 }
 
 .header .sub {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Inclusive Sans', sans-serif;
   font-size: 14px;
   color: var(--ink-3);
   letter-spacing: 0.18em;
@@ -138,7 +137,7 @@ html, body {
   border: 1px solid var(--rule-soft);
   border-radius: 4px;
   color: var(--ink);
-  font: 400 15px 'Karla', sans-serif;
+  font: 400 15px 'Inclusive Sans', sans-serif;
   outline: none;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
@@ -169,7 +168,7 @@ html, body {
   border: 0;
   padding: 0 14px;
   height: 38px;
-  font: 500 13px 'Karla', sans-serif;
+  font: 500 13px 'Inclusive Sans', sans-serif;
   letter-spacing: 0.05em;
   color: var(--ink-3);
   cursor: pointer;
@@ -191,7 +190,7 @@ select.sort {
   background: var(--paper) url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23756749' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;
   border: 1px solid var(--rule-soft);
   border-radius: 4px;
-  font: 400 14px 'Karla', sans-serif;
+  font: 400 14px 'Inclusive Sans', sans-serif;
   color: var(--ink-2);
   cursor: pointer;
   appearance: none;
@@ -217,7 +216,7 @@ select.sort:focus { border-color: var(--accent-soft); }
   background: transparent;
   border: 1px solid var(--rule);
   border-radius: 999px;
-  font: 400 13px 'Karla', sans-serif;
+  font: 400 13px 'Inclusive Sans', sans-serif;
   color: var(--ink-2);
   cursor: pointer;
   transition: all 0.15s;
@@ -251,7 +250,7 @@ select.sort:focus { border-color: var(--accent-soft); }
   background: transparent;
   border: 0;
   padding: 7px 10px;
-  font: 400 13px 'Karla', sans-serif;
+  font: 400 13px 'Inclusive Sans', sans-serif;
   font-style: italic;
   color: var(--ink-3);
   cursor: pointer;
@@ -307,6 +306,7 @@ select.sort:focus { border-color: var(--accent-soft); }
   object-fit: contain;
   display: block;
   z-index: 1;
+  border-radius: 6px;
 }
 .cover.has-image::before {
   content: "";
@@ -341,9 +341,8 @@ select.sort:focus { border-color: var(--accent-soft); }
   pointer-events: none;
 }
 .cover .placeholder .ph-title {
-  font-family: 'Fraunces', serif;
+  font-family: 'Literata', serif;
   font-weight: 500;
-  font-variation-settings: "opsz" 60;
   font-size: 15px;
   line-height: 1.2;
   text-align: center;
@@ -354,7 +353,7 @@ select.sort:focus { border-color: var(--accent-soft); }
   overflow: hidden;
 }
 .cover .placeholder .ph-author {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Inclusive Sans', sans-serif;
   font-size: 11px;
   text-align: center;
   margin-top: 10px;
@@ -380,9 +379,8 @@ select.sort:focus { border-color: var(--accent-soft); }
 }
 
 .card .title {
-  font-family: 'Fraunces', serif;
+  font-family: 'Literata', serif;
   font-weight: 500;
-  font-variation-settings: "opsz" 36;
   font-size: 15px;
   line-height: 1.25;
   color: var(--ink);
@@ -394,7 +392,7 @@ select.sort:focus { border-color: var(--accent-soft); }
   overflow: hidden;
 }
 .card .author {
-  font: 400 13px 'Karla', sans-serif;
+  font: 400 13px 'Inclusive Sans', sans-serif;
   color: var(--ink-3);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -441,15 +439,14 @@ select.sort:focus { border-color: var(--accent-soft); }
   min-width: 0;
 }
 .list-row .lr-title {
-  font-family: 'Fraunces', serif;
+  font-family: 'Literata', serif;
   font-weight: 500;
-  font-variation-settings: "opsz" 36;
   font-size: 17px;
   color: var(--ink);
   letter-spacing: -0.005em;
 }
 .list-row .lr-meta {
-  font: 400 13px 'Karla', sans-serif;
+  font: 400 13px 'Inclusive Sans', sans-serif;
   color: var(--ink-3);
 }
 .list-row .lr-tags {
@@ -460,7 +457,7 @@ select.sort:focus { border-color: var(--accent-soft); }
   max-width: 280px;
 }
 .list-row .lr-tag {
-  font: 400 11px 'Karla', sans-serif;
+  font: 400 11px 'Inclusive Sans', sans-serif;
   color: var(--c);
   padding: 2px 8px;
   border-radius: 999px;
@@ -486,7 +483,7 @@ select.sort:focus { border-color: var(--accent-soft); }
   color: var(--ink-3);
 }
 .empty .em-icon {
-  font-family: 'Fraunces', serif;
+  font-family: 'Literata', serif;
   font-size: 48px;
   color: var(--ink-faint);
   margin-bottom: 12px;
@@ -557,7 +554,7 @@ select.sort:focus { border-color: var(--accent-soft); }
 }
 
 .modal-cover{position:relative;aspect-ratio:2 / 3;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-2)}
-.modal-cover img { width: 100%; height: 100%; object-fit: contain; display: block; position: relative; z-index: 1; }
+.modal-cover img { width: 100%; height: 100%; object-fit: contain; display: block; position: relative; z-index: 1; border-radius: 8px; }
 .modal-cover.has-image::before {
   content: "";
   position: absolute;
@@ -588,14 +585,14 @@ select.sort:focus { border-color: var(--accent-soft); }
   border-radius: 1px;
 }
 .modal-cover .placeholder .ph-title {
-  font-family: 'Fraunces', serif;
+  font-family: 'Literata', serif;
   font-weight: 500;
   font-size: 19px;
   line-height: 1.2;
   text-align: center;
 }
 .modal-cover .placeholder .ph-author {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Inclusive Sans', sans-serif;
   font-size: 12px;
   text-align: center;
   margin-top: 14px;
@@ -605,9 +602,8 @@ select.sort:focus { border-color: var(--accent-soft); }
 }
 
 .modal-info h2 {
-  font-family: 'Fraunces', serif;
+  font-family: 'Literata', serif;
   font-weight: 500;
-  font-variation-settings: "opsz" 72;
   font-size: 28px;
   line-height: 1.15;
   letter-spacing: -0.01em;
@@ -615,7 +611,7 @@ select.sort:focus { border-color: var(--accent-soft); }
   color: var(--ink);
 }
 .modal-info .m-author {
-  font: 400 italic 16px 'Fraunces', serif;
+  font: 400 italic 16px 'Literata', serif;
   color: var(--ink-2);
   margin-bottom: 18px;
 }
@@ -639,7 +635,7 @@ select.sort:focus { border-color: var(--accent-soft); }
   margin-bottom: 22px;
 }
 .modal-info .m-tag {
-  font: 400 12px 'Karla', sans-serif;
+  font: 400 12px 'Inclusive Sans', sans-serif;
   color: var(--c);
   padding: 3px 10px;
   border-radius: 999px;
@@ -659,13 +655,13 @@ select.sort:focus { border-color: var(--accent-soft); }
 }
 .modal-info .rating .star.filled { color: var(--gold); }
 .modal-info .rating .label {
-  font: 400 12px 'Karla', sans-serif;
+  font: 400 12px 'Inclusive Sans', sans-serif;
   color: var(--ink-faint);
   margin-left: 8px;
 }
 
 .section-label {
-  font: 500 11px 'Karla', sans-serif;
+  font: 500 11px 'Inclusive Sans', sans-serif;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -682,7 +678,7 @@ select.sort:focus { border-color: var(--accent-soft); }
 }
 
 .annotation {
-  font-family: 'Fraunces', serif;
+  font-family: 'Literata', serif;
   font-size: 15px;
   line-height: 1.6;
   color: var(--ink-2);
@@ -700,8 +696,7 @@ select.sort:focus { border-color: var(--accent-soft); }
 }
 
 .review {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 14;
+  font-family: 'Literata', serif;
   font-size: 15px;
   line-height: 1.6;
   color: var(--ink);
@@ -725,11 +720,11 @@ select.sort:focus { border-color: var(--accent-soft); }
   padding-top: 28px;
   border-top: 1px solid var(--rule-soft);
   text-align: center;
-  font: 400 12px 'Karla', sans-serif;
+  font: 400 12px 'Inclusive Sans', sans-serif;
   color: var(--ink-faint);
 }
 .footer em {
-  font-family: 'Fraunces', serif;
+  font-family: 'Literata', serif;
   font-style: italic;
 }
 
@@ -942,7 +937,7 @@ function renderCover(book, klass) {
       data-stage="local" data-fallback="${esc(fallback)}"
       onload="handleCoverLoad(this)"
       onerror="handleCoverError(this)"
-      style="opacity:0; transition:opacity 0.3s; position:absolute; inset:0;">
+      style="opacity:0; transition:opacity 0.3s; position:absolute; inset:0; margin:auto; width:auto; height:auto; max-width:100%; max-height:100%;">
     ${revMark}
   </div>`;
 }
@@ -1025,7 +1020,7 @@ function openModal(id) {
            data-stage="local" data-fallback="${esc(fallback)}"
            onload="handleCoverLoad(this)"
            onerror="handleCoverError(this)"
-           style="opacity:0; transition:opacity 0.3s; position:absolute; inset:0;">
+           style="opacity:0; transition:opacity 0.3s; position:absolute; inset:0; margin:auto; width:auto; height:auto; max-width:100%; max-height:100%;">
        </div>`;
   
   const meta = [];
