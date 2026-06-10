@@ -10,19 +10,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #8D917A;
-  --bg-warm: #EADFC4;
-  --paper: #FAF4E3;
-  --paper-soft: #F5EDD8;
-  --ink: #2A2218;
-  --ink-2: #4A3D2C;
-  --ink-3: #756749;
-  --ink-faint: #A89878;
-  --rule: #C9B98F;
-  --rule-soft: #DCCFA8;
-  --accent: #8B4423;
-  --accent-soft: #B5694A;
-  --gold: #B89548;
+  --bg: #6B7A6E;
+  --bg-warm: #5E6C61;
+  --paper: #F2EDDC;
+  --paper-soft: #EAE4CF;
+  --ink: #2E3530;
+  --ink-2: #49544C;
+  --ink-3: #6E7A6F;
+  --ink-faint: #9AA796;
+  --rule: #8FA08C;
+  --rule-soft: #7E8F7C;
+  --accent: #E0B252;
+  --accent-soft: #C99B3F;
+  --gold: #E0B252;
+  --field: #55624F;
+  --field-border: #49543F;
+  --field-text: #F2EDDC;
+  --field-placeholder: #C9CDB9;
+  --on-bg-text: #F2EDDC;
+  --on-bg-muted: #C9CDB9;
   
   --t-child: #B85C5C;
   --t-adult: #4A5D6E;
@@ -57,8 +63,8 @@ html, body {
   min-height: 100vh;
   /* paper grain */
   background-image:
-    radial-gradient(circle at 30% 20%, rgba(184, 149, 72, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(139, 68, 35, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 30% 20%, rgba(224, 178, 82, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(36, 48, 39, 0.18) 0%, transparent 55%);
   background-attachment: fixed;
 }
 
@@ -89,17 +95,17 @@ html, body {
 .header h1 {
   font-family: 'Caveat', cursive;
   font-weight: 600;
-  font-size: clamp(52px, 7vw, 80px);
+  font-size: clamp(64px, 9vw, 104px);
   line-height: 1.0;
   letter-spacing: 0;
-  color: var(--ink);
+  color: var(--on-bg-text);
   margin-bottom: 6px;
 }
 
 .header .sub {
   font-family: 'Inclusive Sans', sans-serif;
   font-size: 14px;
-  color: var(--ink-3);
+  color: var(--on-bg-muted);
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -133,15 +139,15 @@ html, body {
   width: 100%;
   height: 46px;
   padding: 0 16px 0 44px;
-  background: var(--paper);
-  border: 1px solid var(--rule-soft);
+  background: var(--field);
+  border: 1px solid var(--field-border);
   border-radius: 4px;
-  color: var(--ink);
+  color: var(--field-text);
   font: 400 15px 'Inclusive Sans', sans-serif;
   outline: none;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
-.search input::placeholder { color: var(--ink-faint); font-style: italic; }
+.search input::placeholder { color: var(--field-placeholder); font-style: italic; }
 .search input:focus {
   border-color: var(--accent-soft);
   box-shadow: 0 0 0 3px rgba(139, 68, 35, 0.08);
@@ -152,14 +158,14 @@ html, body {
   left: 14px;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--ink-faint);
+  color: var(--field-placeholder);
   pointer-events: none;
 }
 
 .toggle-group {
   display: inline-flex;
-  background: var(--paper);
-  border: 1px solid var(--rule-soft);
+  background: var(--field);
+  border: 1px solid var(--field-border);
   border-radius: 4px;
   padding: 3px;
 }
@@ -170,7 +176,7 @@ html, body {
   height: 38px;
   font: 500 13px 'Inclusive Sans', sans-serif;
   letter-spacing: 0.05em;
-  color: var(--ink-3);
+  color: var(--field-placeholder);
   cursor: pointer;
   border-radius: 3px;
   display: inline-flex;
@@ -178,20 +184,20 @@ html, body {
   gap: 6px;
   transition: background 0.15s, color 0.15s;
 }
-.toggle-btn:hover { color: var(--ink); }
+.toggle-btn:hover { color: var(--field-text); }
 .toggle-btn.active {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--paper);
+  color: #3A4237;
 }
 
 select.sort {
   height: 46px;
   padding: 0 36px 0 14px;
-  background: var(--paper) url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23756749' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;
-  border: 1px solid var(--rule-soft);
+  background: var(--field) url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C9CDB9' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;
+  border: 1px solid var(--field-border);
   border-radius: 4px;
   font: 400 14px 'Inclusive Sans', sans-serif;
-  color: var(--ink-2);
+  color: var(--field-text);
   cursor: pointer;
   appearance: none;
   outline: none;
@@ -213,18 +219,18 @@ select.sort:focus { border-color: var(--accent-soft); }
   align-items: center;
   gap: 6px;
   padding: 7px 14px;
-  background: transparent;
-  border: 1px solid var(--rule);
+  background: var(--field);
+  border: 1px solid var(--field-border);
   border-radius: 999px;
   font: 400 13px 'Inclusive Sans', sans-serif;
-  color: var(--ink-2);
+  color: #E8E5D2;
   cursor: pointer;
   transition: all 0.15s;
   letter-spacing: 0.01em;
 }
 .tag-chip:hover {
-  background: var(--paper);
-  border-color: var(--ink-3);
+  background: var(--bg-warm);
+  border-color: var(--rule);
 }
 .tag-chip .dot {
   width: 8px;
@@ -236,15 +242,15 @@ select.sort:focus { border-color: var(--accent-soft); }
 .tag-chip .count {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  color: var(--ink-faint);
+  color: var(--field-placeholder);
   margin-left: 2px;
 }
 .tag-chip.active {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--paper);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #3A3422;
 }
-.tag-chip.active .count { color: var(--paper-soft); }
+.tag-chip.active .count { color: #5C5232; }
 
 .clear-tags {
   background: transparent;
@@ -252,7 +258,7 @@ select.sort:focus { border-color: var(--accent-soft); }
   padding: 7px 10px;
   font: 400 13px 'Inclusive Sans', sans-serif;
   font-style: italic;
-  color: var(--ink-3);
+  color: var(--on-bg-muted);
   cursor: pointer;
   text-decoration: underline;
   text-decoration-color: var(--rule);
@@ -264,7 +270,7 @@ select.sort:focus { border-color: var(--accent-soft); }
 /* ── RESULT META ─────────────────────────────────────── */
 .result-meta {
   font: 400 13px 'JetBrains Mono', monospace;
-  color: var(--ink-3);
+  color: var(--on-bg-muted);
   margin-bottom: 20px;
   letter-spacing: 0.02em;
 }
@@ -383,7 +389,7 @@ select.sort:focus { border-color: var(--accent-soft); }
   font-weight: 500;
   font-size: 15px;
   line-height: 1.25;
-  color: var(--ink);
+  color: var(--on-bg-text);
   letter-spacing: -0.005em;
   margin-bottom: 4px;
   display: -webkit-box;
@@ -393,7 +399,7 @@ select.sort:focus { border-color: var(--accent-soft); }
 }
 .card .author {
   font: 400 13px 'Inclusive Sans', sans-serif;
-  color: var(--ink-3);
+  color: var(--on-bg-muted);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -401,7 +407,7 @@ select.sort:focus { border-color: var(--accent-soft); }
 }
 .card .year {
   font: 400 11px 'JetBrains Mono', monospace;
-  color: var(--ink-faint);
+  color: var(--accent);
   margin-top: 2px;
 }
 
@@ -428,7 +434,7 @@ select.sort:focus { border-color: var(--accent-soft); }
   transition: background 0.1s;
 }
 .list-row:hover {
-  background: var(--paper-soft);
+  background: var(--bg-warm);
 }
 .list-row:first-child { border-top: 1px solid var(--rule-soft); }
 
@@ -442,12 +448,12 @@ select.sort:focus { border-color: var(--accent-soft); }
   font-family: 'Literata', serif;
   font-weight: 500;
   font-size: 17px;
-  color: var(--ink);
+  color: var(--on-bg-text);
   letter-spacing: -0.005em;
 }
 .list-row .lr-meta {
   font: 400 13px 'Inclusive Sans', sans-serif;
-  color: var(--ink-3);
+  color: var(--on-bg-muted);
 }
 .list-row .lr-tags {
   display: flex;
@@ -467,7 +473,7 @@ select.sort:focus { border-color: var(--accent-soft); }
 }
 .list-row .lr-year {
   font: 400 12px 'JetBrains Mono', monospace;
-  color: var(--ink-faint);
+  color: var(--accent);
   white-space: nowrap;
 }
 
@@ -480,12 +486,12 @@ select.sort:focus { border-color: var(--accent-soft); }
 .empty {
   text-align: center;
   padding: 80px 20px;
-  color: var(--ink-3);
+  color: var(--on-bg-muted);
 }
 .empty .em-icon {
   font-family: 'Literata', serif;
   font-size: 48px;
-  color: var(--ink-faint);
+  color: var(--on-bg-muted);
   margin-bottom: 12px;
   font-style: italic;
 }
@@ -721,7 +727,7 @@ select.sort:focus { border-color: var(--accent-soft); }
   border-top: 1px solid var(--rule-soft);
   text-align: center;
   font: 400 12px 'Inclusive Sans', sans-serif;
-  color: var(--ink-faint);
+  color: var(--on-bg-muted);
 }
 .footer em {
   font-family: 'Literata', serif;
@@ -739,7 +745,7 @@ select.sort:focus { border-color: var(--accent-soft); }
 
   <header class="header">
     <h1>Моя библиотека</h1>
-    <p class="sub">Домашняя коллекция <span class="count" id="totalCount">··</span></p>
+    <p class="sub">Сейчас в коллекции <span class="count" id="totalCount">··</span></p>
   </header>
 
   <div class="controls">
