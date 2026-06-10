@@ -295,7 +295,7 @@ select.sort:focus { border-color: var(--accent-soft); }
   position: relative;
   aspect-ratio: 2 / 3;
   background: var(--paper);
-  border-radius: 2px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: var(--shadow-1);
   transition: box-shadow 0.2s;
@@ -556,13 +556,7 @@ select.sort:focus { border-color: var(--accent-soft); }
   .modal-cover { max-width: 200px; margin: 0 auto; }
 }
 
-.modal-cover {
-  position: relative;
-  aspect-ratio: 2 / 3;
-  border-radius: 3px;
-  overflow: hidden;
-  box-shadow: var(--shadow-2);
-}
+.modal-cover{position:relative;aspect-ratio:2 / 3;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-2)}
 .modal-cover img { width: 100%; height: 100%; object-fit: contain; display: block; position: relative; z-index: 1; }
 .modal-cover.has-image::before {
   content: "";
